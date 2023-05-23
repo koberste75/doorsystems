@@ -1,0 +1,1501 @@
+@prefix : <http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix doorsystems: <http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#> .
+@base <http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems/> .
+
+<http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems> rdf:type owl:Ontology ;
+                                                                     owl:versionIRI <http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems/1.0.0> ;
+                                                                     rdfs:label "Ontology for Doors and Access Points"@en ;
+                                                                     owl:versionInfo "0.1"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasComponent
+doorsystems:hasComponent rdf:type owl:ObjectProperty ;
+                         rdfs:domain doorsystems:BuildingComponent .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#isComponentOf
+doorsystems:isComponentOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#isConnectedTo
+doorsystems:isConnectedTo rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#isPlacedIn
+doorsystems:isPlacedIn rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#AccessPoint
+doorsystems:AccessPoint rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf doorsystems:BuildingElement .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#AccessPointHeadData
+doorsystems:AccessPointHeadData rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf doorsystems:AccessPoint ;
+                                rdfs:domain doorsystems:Door .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Accessibility
+doorsystems:Accessibility rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf doorsystems:AccessPointHeadData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#ApplicationData
+doorsystems:ApplicationData rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf doorsystems:ComponentHeadData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#BuildingComponent
+doorsystems:BuildingComponent rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#BuildingElement
+doorsystems:BuildingElement rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#CAFM
+doorsystems:CAFM rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf doorsystems:ComponentHeadData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#CEMarking
+doorsystems:CEMarking rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf doorsystems:ComponentHeadData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#ComponentHeadData
+doorsystems:ComponentHeadData rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:BuildingComponent ;
+                              rdfs:domain doorsystems:BuildingComponent .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#DimensionalData
+doorsystems:DimensionalData rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf doorsystems:ComponentHeadData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Documentation
+doorsystems:Documentation rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf doorsystems:ComponentHeadData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#DoorLeaf
+doorsystems:DoorLeaf rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf doorsystems:SwingDoorType .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#ElectricData
+doorsystems:ElectricData rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf doorsystems:BuildingComponent ;
+                         rdfs:domain doorsystems:AutomaticDrive ,
+                                     doorsystems:Manager ,
+                                     doorsystems:Reader ,
+                                     doorsystems:Sensor .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#FixedPanels
+doorsystems:FixedPanels rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf doorsystems:SwingDoorType .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Frame
+doorsystems:Frame rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf doorsystems:SwingDoorType .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#General
+doorsystems:General rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf doorsystems:AccessPointHeadData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Identification
+doorsystems:Identification rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:ComponentHeadData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#IsAutomated
+doorsystems:IsAutomated rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf doorsystems:Accessibility .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Manufacturer
+doorsystems:Manufacturer rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf doorsystems:ComponentHeadData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Material
+doorsystems:Material rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf doorsystems:ComponentHeadData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Opening
+doorsystems:Opening rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf doorsystems:AccessPointHeadData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Performance
+doorsystems:Performance rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf doorsystems:AccessPointHeadData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Position
+doorsystems:Position rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf doorsystems:AccessPointHeadData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Pricing
+doorsystems:Pricing rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf doorsystems:ComponentHeadData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Requirements
+doorsystems:Requirements rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf doorsystems:AccessPointHeadData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Standards
+doorsystems:Standards rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf doorsystems:ComponentHeadData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Status
+doorsystems:Status rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf doorsystems:AccessPointHeadData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#SwingDoorType
+doorsystems:SwingDoorType rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf doorsystems:AccessPoint ;
+                          rdfs:domain doorsystems:SwingDoor .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasAccess
+doorsystems:hasAccess rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasAccessBack
+doorsystems:hasAccessBack rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf doorsystems:DimensionalData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasAccessBottom
+doorsystems:hasAccessBottom rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf doorsystems:DimensionalData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasAccessFront
+doorsystems:hasAccessFront rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:DimensionalData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasAccessLeft
+doorsystems:hasAccessLeft rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf doorsystems:DimensionalData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasAccessRight
+doorsystems:hasAccessRight rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:DimensionalData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasAccessSr
+doorsystems:hasAccessSr rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasAccessTop
+doorsystems:hasAccessTop rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf doorsystems:DimensionalData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasAcousticRating
+doorsystems:hasAcousticRating rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:Performance .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasApplicableFireRatedDoor
+doorsystems:hasApplicableFireRatedDoor rdf:type owl:DatatypeProperty ;
+                                       rdfs:subPropertyOf doorsystems:ApplicationData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasApplicablePanicExitDoor
+doorsystems:hasApplicablePanicExitDoor rdf:type owl:DatatypeProperty ;
+                                       rdfs:subPropertyOf doorsystems:ApplicationData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasApplicableSmokeDoor
+doorsystems:hasApplicableSmokeDoor rdf:type owl:DatatypeProperty ;
+                                   rdfs:subPropertyOf doorsystems:ApplicationData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasAuditCostCurrency
+doorsystems:hasAuditCostCurrency rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf doorsystems:CAFM .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasAuditCostValue
+doorsystems:hasAuditCostValue rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:CAFM .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasAuthorisedRepresentative
+doorsystems:hasAuthorisedRepresentative rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf doorsystems:CEMarking .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasBarcode
+doorsystems:hasBarcode rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasBuildingSection
+doorsystems:hasBuildingSection rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf doorsystems:Position .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasBulletResistance
+doorsystems:hasBulletResistance rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasBurglarResistance
+doorsystems:hasBurglarResistance rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasCAFMObjectId
+doorsystems:hasCAFMObjectId rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf doorsystems:CAFM .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasCAFMPlanNnumber
+doorsystems:hasCAFMPlanNnumber rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf doorsystems:CAFM .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasCategory
+doorsystems:hasCategory rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasClampProtection
+doorsystems:hasClampProtection rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasClassificationECLASS
+doorsystems:hasClassificationECLASS rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasClassificationETIM
+doorsystems:hasClassificationETIM rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasClassificationOmniclass
+doorsystems:hasClassificationOmniclass rdf:type owl:DatatypeProperty ;
+                                       rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasClassificationUniclass
+doorsystems:hasClassificationUniclass rdf:type owl:DatatypeProperty ;
+                                      rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasCleaning
+doorsystems:hasCleaning rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf doorsystems:CAFM .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasClearanceHeightMin
+doorsystems:hasClearanceHeightMin rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasClimaticStress
+doorsystems:hasClimaticStress rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasClosingBehavior
+doorsystems:hasClosingBehavior rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasClosingDirections
+doorsystems:hasClosingDirections rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf doorsystems:General .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasClosingSafetyArea
+doorsystems:hasClosingSafetyArea rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasCoating
+doorsystems:hasCoating rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf doorsystems:Material .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasColor
+doorsystems:hasColor rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf doorsystems:Material .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasContactDetails
+doorsystems:hasContactDetails rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:Manufacturer .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasCountry
+doorsystems:hasCountry rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf doorsystems:Manufacturer .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasCurrent
+doorsystems:hasCurrent rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf doorsystems:ElectricData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasDateOfManufacture
+doorsystems:hasDateOfManufacture rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasDiameter
+doorsystems:hasDiameter rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf doorsystems:DimensionalData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasDoorClosing
+doorsystems:hasDoorClosing rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasDoorConstructionType
+doorsystems:hasDoorConstructionType rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf doorsystems:General .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasDoorFloorHeight
+doorsystems:hasDoorFloorHeight rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf doorsystems:Opening .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasDoorFloorHeight2
+doorsystems:hasDoorFloorHeight2 rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf doorsystems:Opening .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasDoorMaterialApplication
+doorsystems:hasDoorMaterialApplication rdf:type owl:DatatypeProperty ;
+                                       rdfs:subPropertyOf doorsystems:ApplicationData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasDoorNumber
+doorsystems:hasDoorNumber rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf doorsystems:Status .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasDoorOperation
+doorsystems:hasDoorOperation rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasDoorOperationSr
+doorsystems:hasDoorOperationSr rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasDoorSet
+doorsystems:hasDoorSet rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf doorsystems:General .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasDoorStatusControl
+doorsystems:hasDoorStatusControl rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasDoorThresholdHeight
+doorsystems:hasDoorThresholdHeight rdf:type owl:DatatypeProperty ;
+                                   rdfs:subPropertyOf doorsystems:Opening .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasDoorType
+doorsystems:hasDoorType rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf doorsystems:General .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasDoorTypeSpecification
+doorsystems:hasDoorTypeSpecification rdf:type owl:DatatypeProperty ;
+                                     rdfs:subPropertyOf doorsystems:General .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasElectricPowerMax
+doorsystems:hasElectricPowerMax rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf doorsystems:ElectricData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasElectricPowerNorm
+doorsystems:hasElectricPowerNorm rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf doorsystems:ElectricData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasElectricalConnection
+doorsystems:hasElectricalConnection rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasEquipmentId
+doorsystems:hasEquipmentId rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:CAFM .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasEscapeDirection
+doorsystems:hasEscapeDirection rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasEuropeanAssessmentDocument
+doorsystems:hasEuropeanAssessmentDocument rdf:type owl:DatatypeProperty ;
+                                          rdfs:subPropertyOf doorsystems:CEMarking .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasEuropeanTechnicalAssessment
+doorsystems:hasEuropeanTechnicalAssessment rdf:type owl:DatatypeProperty ;
+                                           rdfs:subPropertyOf doorsystems:CEMarking .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasExpectedLifetime
+doorsystems:hasExpectedLifetime rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf doorsystems:CAFM .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasFireProtection
+doorsystems:hasFireProtection rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasFireRating
+doorsystems:hasFireRating rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf doorsystems:Performance .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasFloor
+doorsystems:hasFloor rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf doorsystems:Position .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasFrameColor
+doorsystems:hasFrameColor rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf doorsystems:Frame .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasFrameColor2
+doorsystems:hasFrameColor2 rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:Frame .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasFrameMaterial
+doorsystems:hasFrameMaterial rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf doorsystems:Frame .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasFrameMirrorWidth
+doorsystems:hasFrameMirrorWidth rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf doorsystems:Frame .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasFrameMirrorWidth2
+doorsystems:hasFrameMirrorWidth2 rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf doorsystems:Frame .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasFrameOuterDimensionWidth
+doorsystems:hasFrameOuterDimensionWidth rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf doorsystems:Frame .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasFrameOuterDimensionWidth2
+doorsystems:hasFrameOuterDimensionWidth2 rdf:type owl:DatatypeProperty ;
+                                         rdfs:subPropertyOf doorsystems:Frame .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasFrameSurface
+doorsystems:hasFrameSurface rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf doorsystems:Frame .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasFrameSurface2
+doorsystems:hasFrameSurface2 rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf doorsystems:Frame .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasFrameType
+doorsystems:hasFrameType rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf doorsystems:Frame .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasFrameTypeSpecification
+doorsystems:hasFrameTypeSpecification rdf:type owl:DatatypeProperty ;
+                                      rdfs:subPropertyOf doorsystems:Frame .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasFrequency
+doorsystems:hasFrequency rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf doorsystems:ElectricData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasGlazingArea
+doorsystems:hasGlazingArea rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:DoorLeaf .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasGlobalLocationNumber
+doorsystems:hasGlobalLocationNumber rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf doorsystems:Manufacturer .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasHarmonisedStandard
+doorsystems:hasHarmonisedStandard rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf doorsystems:Standards .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasHarmonisedStandardUrl
+doorsystems:hasHarmonisedStandardUrl rdf:type owl:DatatypeProperty ;
+                                     rdfs:subPropertyOf doorsystems:Standards .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasHeatTransfer
+doorsystems:hasHeatTransfer rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasHeight
+doorsystems:hasHeight rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf doorsystems:DimensionalData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasIPProtection
+doorsystems:hasIPProtection rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf doorsystems:ElectricData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasId
+doorsystems:hasId rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf doorsystems:Status .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasIdentificationCodeProductType
+doorsystems:hasIdentificationCodeProductType rdf:type owl:DatatypeProperty ;
+                                             rdfs:subPropertyOf doorsystems:CEMarking .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasInspectionInterval
+doorsystems:hasInspectionInterval rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf doorsystems:CAFM .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasInstallationmanualUrl
+doorsystems:hasInstallationmanualUrl rdf:type owl:DatatypeProperty ;
+                                     rdfs:subPropertyOf doorsystems:Documentation .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasIntendedUses
+doorsystems:hasIntendedUses rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf doorsystems:CEMarking .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasInventoryNumber
+doorsystems:hasInventoryNumber rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf doorsystems:CAFM .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasItemnumber
+doorsystems:hasItemnumber rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasLanguage
+doorsystems:hasLanguage rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf doorsystems:Manufacturer .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasLeafBottomSeal
+doorsystems:hasLeafBottomSeal rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:DoorLeaf .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasLeafColor
+doorsystems:hasLeafColor rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf doorsystems:DoorLeaf .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasLeafColor2
+doorsystems:hasLeafColor2 rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf doorsystems:DoorLeaf .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasLeafCutout
+doorsystems:hasLeafCutout rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf doorsystems:DoorLeaf .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasLeafEdge
+doorsystems:hasLeafEdge rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf doorsystems:DoorLeaf .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasLeafEquipment
+doorsystems:hasLeafEquipment rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf doorsystems:DoorLeaf .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasLeafFilling
+doorsystems:hasLeafFilling rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:DoorLeaf .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasLeafMaterial
+doorsystems:hasLeafMaterial rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf doorsystems:DoorLeaf .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasLeafSurface
+doorsystems:hasLeafSurface rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:DoorLeaf .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasLeafSurface2
+doorsystems:hasLeafSurface2 rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf doorsystems:DoorLeaf .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasLeafType
+doorsystems:hasLeafType rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf doorsystems:DoorLeaf .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasLeafTypeSpecification
+doorsystems:hasLeafTypeSpecification rdf:type owl:DatatypeProperty ;
+                                     rdfs:subPropertyOf doorsystems:DoorLeaf .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasLeafVentilationOpening
+doorsystems:hasLeafVentilationOpening rdf:type owl:DatatypeProperty ;
+                                      rdfs:subPropertyOf doorsystems:DoorLeaf .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasLength
+doorsystems:hasLength rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf doorsystems:DimensionalData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasLinkDeclarationOfPerformance
+doorsystems:hasLinkDeclarationOfPerformance rdf:type owl:DatatypeProperty ;
+                                            rdfs:subPropertyOf doorsystems:CEMarking .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasMaintenanceCycle
+doorsystems:hasMaintenanceCycle rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf doorsystems:CAFM .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasMaintenanceManualUrl
+doorsystems:hasMaintenanceManualUrl rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf doorsystems:Documentation .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasManufacturer
+doorsystems:hasManufacturer rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf doorsystems:Manufacturer .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasManufacturerDescription
+doorsystems:hasManufacturerDescription rdf:type owl:DatatypeProperty ;
+                                       rdfs:subPropertyOf doorsystems:Manufacturer .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasManufacturerwebsite
+doorsystems:hasManufacturerwebsite rdf:type owl:DatatypeProperty ;
+                                   rdfs:subPropertyOf doorsystems:Manufacturer .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasMaterial
+doorsystems:hasMaterial rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf doorsystems:Material .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasMechanicalLoad
+doorsystems:hasMechanicalLoad rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasModelNumber
+doorsystems:hasModelNumber rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasMonitoringDoorStatus
+doorsystems:hasMonitoringDoorStatus rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasNetWeight
+doorsystems:hasNetWeight rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf doorsystems:DimensionalData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasNotifiedBodies
+doorsystems:hasNotifiedBodies rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:CEMarking .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasNumberDeclarationOfPerformance
+doorsystems:hasNumberDeclarationOfPerformance rdf:type owl:DatatypeProperty ;
+                                              rdfs:subPropertyOf doorsystems:CEMarking .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasNumberOfCleaningSides
+doorsystems:hasNumberOfCleaningSides rdf:type owl:DatatypeProperty ;
+                                     rdfs:subPropertyOf doorsystems:CAFM .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasNumberOfLeaves
+doorsystems:hasNumberOfLeaves rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:General .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasNumberOfPhases
+doorsystems:hasNumberOfPhases rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:ElectricData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasOpeningAngleMin
+doorsystems:hasOpeningAngleMin rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasOpensInRoom
+doorsystems:hasOpensInRoom rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:General .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasOperationType
+doorsystems:hasOperationType rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf doorsystems:Accessibility .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasOther
+doorsystems:hasOther rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasOtherRequirement
+doorsystems:hasOtherRequirement rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasPassageWidthMin
+doorsystems:hasPassageWidthMin rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasPassageWidthMin2
+doorsystems:hasPassageWidthMin2 rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasPlnningdataUrl
+doorsystems:hasPlnningdataUrl rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:Documentation .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasPolarity
+doorsystems:hasPolarity rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf doorsystems:ElectricData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasPriceAcceptance
+doorsystems:hasPriceAcceptance rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf doorsystems:Pricing .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasPriceCommissioning
+doorsystems:hasPriceCommissioning rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf doorsystems:Pricing .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasPriceComponent
+doorsystems:hasPriceComponent rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:Pricing .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasPriceConnection
+doorsystems:hasPriceConnection rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf doorsystems:Pricing .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasPriceCurrency
+doorsystems:hasPriceCurrency rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf doorsystems:Pricing .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasPriceInstallation
+doorsystems:hasPriceInstallation rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf doorsystems:Pricing .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasPriceTotal
+doorsystems:hasPriceTotal rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf doorsystems:Pricing .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasProductAbbreviation
+doorsystems:hasProductAbbreviation rdf:type owl:DatatypeProperty ;
+                                   rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasProductDocumentation
+doorsystems:hasProductDocumentation rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasProductGroup
+doorsystems:hasProductGroup rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasProductName
+doorsystems:hasProductName rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasProductSpecification
+doorsystems:hasProductSpecification rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasProductType
+doorsystems:hasProductType rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasProductWebpage
+doorsystems:hasProductWebpage rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasProducthandbookUrl
+doorsystems:hasProducthandbookUrl rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf doorsystems:Documentation .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasProjectPhase
+doorsystems:hasProjectPhase rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf doorsystems:Position .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasProjectTypeKey
+doorsystems:hasProjectTypeKey rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:General .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasRadiationProtection
+doorsystems:hasRadiationProtection rdf:type owl:DatatypeProperty ;
+                                   rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasRemark
+doorsystems:hasRemark rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf doorsystems:Status .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasRemarkCleaning
+doorsystems:hasRemarkCleaning rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:CAFM .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasRoomCounter
+doorsystems:hasRoomCounter rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:Status .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasRoomDesignation
+doorsystems:hasRoomDesignation rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf doorsystems:Position .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasRoomDesignationSr
+doorsystems:hasRoomDesignationSr rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf doorsystems:Position .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasRoomNo
+doorsystems:hasRoomNo rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf doorsystems:Position .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasRoomNoSr
+doorsystems:hasRoomNoSr rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf doorsystems:Position .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasSecurityRating
+doorsystems:hasSecurityRating rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:Performance .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasSerialnumber
+doorsystems:hasSerialnumber rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasSidePanelLeft
+doorsystems:hasSidePanelLeft rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf doorsystems:FixedPanels .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasSidePanelRight
+doorsystems:hasSidePanelRight rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:FixedPanels .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasSkylight
+doorsystems:hasSkylight rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf doorsystems:FixedPanels .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasSmokeProtection
+doorsystems:hasSmokeProtection rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasSoundInsulation
+doorsystems:hasSoundInsulation rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasSpecialDoorDescription
+doorsystems:hasSpecialDoorDescription rdf:type owl:DatatypeProperty ;
+                                      rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasSurface
+doorsystems:hasSurface rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf doorsystems:Material .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasSystemsAVCP
+doorsystems:hasSystemsAVCP rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:CEMarking .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasTechnicalAssessmentBody
+doorsystems:hasTechnicalAssessmentBody rdf:type owl:DatatypeProperty ;
+                                       rdfs:subPropertyOf doorsystems:CEMarking .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasTechnicalDocumentation
+doorsystems:hasTechnicalDocumentation rdf:type owl:DatatypeProperty ;
+                                      rdfs:subPropertyOf doorsystems:CEMarking .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasTestingIntervals
+doorsystems:hasTestingIntervals rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf doorsystems:CAFM .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasTransportWeight
+doorsystems:hasTransportWeight rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf doorsystems:DimensionalData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasType
+doorsystems:hasType rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf doorsystems:Identification .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasTypeDoorApplication
+doorsystems:hasTypeDoorApplication rdf:type owl:DatatypeProperty ;
+                                   rdfs:subPropertyOf doorsystems:ApplicationData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasTypeOfTests
+doorsystems:hasTypeOfTests rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:CAFM .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasTypeOfUse
+doorsystems:hasTypeOfUse rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf doorsystems:General .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasUsablePassageHeight
+doorsystems:hasUsablePassageHeight rdf:type owl:DatatypeProperty ;
+                                   rdfs:subPropertyOf doorsystems:General .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasUsablePassageWidth
+doorsystems:hasUsablePassageWidth rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf doorsystems:General .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasUsablePassageWidth2
+doorsystems:hasUsablePassageWidth2 rdf:type owl:DatatypeProperty ;
+                                   rdfs:subPropertyOf doorsystems:General .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasUsageIntervals
+doorsystems:hasUsageIntervals rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf doorsystems:CAFM .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasUserManualUrl
+doorsystems:hasUserManualUrl rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf doorsystems:Documentation .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasVersionNumber
+doorsystems:hasVersionNumber rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf doorsystems:Status .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasVoltage
+doorsystems:hasVoltage rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf doorsystems:ElectricData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasWallOpeningHeight
+doorsystems:hasWallOpeningHeight rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf doorsystems:Opening .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasWallSurface
+doorsystems:hasWallSurface rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:Opening .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasWallSurface2
+doorsystems:hasWallSurface2 rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf doorsystems:Opening .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasWallSurface2Thickness
+doorsystems:hasWallSurface2Thickness rdf:type owl:DatatypeProperty ;
+                                     rdfs:subPropertyOf doorsystems:Opening .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasWallSurfaceThickness
+doorsystems:hasWallSurfaceThickness rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf doorsystems:Opening .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasWallThickness
+doorsystems:hasWallThickness rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf doorsystems:Opening .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasWallWidth
+doorsystems:hasWallWidth rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf doorsystems:Opening .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#hasWidth
+doorsystems:hasWidth rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf doorsystems:DimensionalData .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#isBarrierFree
+doorsystems:isBarrierFree rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#isDampRoom
+doorsystems:isDampRoom rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#isEscapeRoute
+doorsystems:isEscapeRoute rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#isExteriorDoor
+doorsystems:isExteriorDoor rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf doorsystems:Requirements .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#isExternal
+doorsystems:isExternal rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf doorsystems:Position .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#isFacadeDoor
+doorsystems:isFacadeDoor rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf doorsystems:General .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#isFireExit
+doorsystems:isFireExit rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf doorsystems:Performance .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#isHandicapAccessible
+doorsystems:isHandicapAccessible rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf doorsystems:Accessibility .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#isSelfClosing
+doorsystems:isSelfClosing rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf doorsystems:Accessibility .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#isWetRoom
+doorsystems:isWetRoom rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf doorsystems:Requirements .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#AccessControlReader
+doorsystems:AccessControlReader rdf:type owl:Class ;
+                                rdfs:subClassOf doorsystems:Reader .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#AccessControlSystem
+doorsystems:AccessControlSystem rdf:type owl:Class ;
+                                rdfs:subClassOf doorsystems:ITSystem .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#AccessPoint
+doorsystems:AccessPoint rdf:type owl:Class ;
+                        rdfs:subClassOf doorsystems:BuildingElement .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#AutomaticDoor
+doorsystems:AutomaticDoor rdf:type owl:Class ;
+                          rdfs:subClassOf doorsystems:DoorFunction .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#AutomaticDrive
+doorsystems:AutomaticDrive rdf:type owl:Class ;
+                           rdfs:subClassOf doorsystems:BuildingComponent .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Barrier
+doorsystems:Barrier rdf:type owl:Class ;
+                    rdfs:subClassOf doorsystems:AccessPoint .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#BreakthroughDetector
+doorsystems:BreakthroughDetector rdf:type owl:Class ;
+                                 rdfs:subClassOf doorsystems:Sensor .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#BuildingComponent
+doorsystems:BuildingComponent rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#BuildingElement
+doorsystems:BuildingElement rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Button
+doorsystems:Button rdf:type owl:Class ;
+                   rdfs:subClassOf doorsystems:BuildingComponent .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#CableConnection
+doorsystems:CableConnection rdf:type owl:Class ;
+                            rdfs:subClassOf doorsystems:Electric .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#ConsealedDoorCloser
+doorsystems:ConsealedDoorCloser rdf:type owl:Class ;
+                                rdfs:subClassOf doorsystems:DoorCloser .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Cylinder
+doorsystems:Cylinder rdf:type owl:Class ;
+                     rdfs:subClassOf doorsystems:BuildingComponent .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#DigitalCylinder
+doorsystems:DigitalCylinder rdf:type owl:Class ;
+                            rdfs:subClassOf doorsystems:Cylinder .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Door
+doorsystems:Door rdf:type owl:Class ;
+                 rdfs:subClassOf doorsystems:AccessPoint .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#DoorCloseButton
+doorsystems:DoorCloseButton rdf:type owl:Class ;
+                            rdfs:subClassOf doorsystems:Button .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#DoorCloser
+doorsystems:DoorCloser rdf:type owl:Class ;
+                       rdfs:subClassOf doorsystems:BuildingComponent .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#DoorFunction
+doorsystems:DoorFunction rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#DoorMagnet
+doorsystems:DoorMagnet rdf:type owl:Class ;
+                       rdfs:subClassOf doorsystems:Equipement .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#DoorStop
+doorsystems:DoorStop rdf:type owl:Class ;
+                     rdfs:subClassOf doorsystems:Equipement .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Electric
+doorsystems:Electric rdf:type owl:Class ;
+                     rdfs:subClassOf doorsystems:BuildingComponent .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#EmergencyStopButton
+doorsystems:EmergencyStopButton rdf:type owl:Class ;
+                                rdfs:subClassOf doorsystems:Button .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Equipement
+doorsystems:Equipement rdf:type owl:Class ;
+                       rdfs:subClassOf doorsystems:BuildingComponent .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#EscapeRouteDoor
+doorsystems:EscapeRouteDoor rdf:type owl:Class ;
+                            rdfs:subClassOf doorsystems:DoorFunction ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty doorsystems:isFireExit ;
+                                              owl:hasValue "true"^^xsd:boolean
+                                            ] .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#EscapeRouteManager
+doorsystems:EscapeRouteManager rdf:type owl:Class ;
+                               rdfs:subClassOf doorsystems:Manager .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#FingerProtectionBlind
+doorsystems:FingerProtectionBlind rdf:type owl:Class ;
+                                  rdfs:subClassOf doorsystems:Equipement .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#FireRatedDoor
+doorsystems:FireRatedDoor rdf:type owl:Class ;
+                          rdfs:subClassOf doorsystems:DoorFunction ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty doorsystems:hasFireRating ;
+                                            owl:hasValue "true"^^xsd:boolean
+                                          ] .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Fitting
+doorsystems:Fitting rdf:type owl:Class ;
+                    rdfs:subClassOf doorsystems:BuildingComponent .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Fittings
+doorsystems:Fittings rdf:type owl:Class ;
+                     rdfs:subClassOf doorsystems:BuildingComponent .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#FloorSpring
+doorsystems:FloorSpring rdf:type owl:Class ;
+                        rdfs:subClassOf doorsystems:DoorCloser .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Gate
+doorsystems:Gate rdf:type owl:Class ;
+                 rdfs:subClassOf doorsystems:AccessPoint .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Handle
+doorsystems:Handle rdf:type owl:Class ;
+                   rdfs:subClassOf doorsystems:Fittings .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Hinge
+doorsystems:Hinge rdf:type owl:Class ;
+                  rdfs:subClassOf doorsystems:Fittings .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#ITSystem
+doorsystems:ITSystem rdf:type owl:Class ;
+                     rdfs:subClassOf doorsystems:BuildingComponent .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#InfraredSensor
+doorsystems:InfraredSensor rdf:type owl:Class ;
+                           rdfs:subClassOf doorsystems:Sensor .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#IntegratedDoorCloser
+doorsystems:IntegratedDoorCloser rdf:type owl:Class ;
+                                 rdfs:subClassOf doorsystems:DoorCloser .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Knob
+doorsystems:Knob rdf:type owl:Class ;
+                 rdfs:subClassOf doorsystems:Handle .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#LaserSensor
+doorsystems:LaserSensor rdf:type owl:Class ;
+                        rdfs:subClassOf doorsystems:Sensor .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Lock
+doorsystems:Lock rdf:type owl:Class ;
+                 rdfs:subClassOf doorsystems:BuildingComponent .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Manager
+doorsystems:Manager rdf:type owl:Class ;
+                    rdfs:subClassOf doorsystems:BuildingComponent .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#MechanicalCylinder
+doorsystems:MechanicalCylinder rdf:type owl:Class ;
+                               rdfs:subClassOf doorsystems:Cylinder .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#MechatronicCylinder
+doorsystems:MechatronicCylinder rdf:type owl:Class ;
+                                rdfs:subClassOf doorsystems:Cylinder .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#MultipointLock
+doorsystems:MultipointLock rdf:type owl:Class ;
+                           rdfs:subClassOf doorsystems:Lock .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#PanicBar
+doorsystems:PanicBar rdf:type owl:Class ;
+                     rdfs:subClassOf doorsystems:Fittings .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Pushbar
+doorsystems:Pushbar rdf:type owl:Class ;
+                    rdfs:subClassOf doorsystems:Handle .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Pushbutton
+doorsystems:Pushbutton rdf:type owl:Class ;
+                       rdfs:subClassOf doorsystems:Button .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#RadarSensor
+doorsystems:RadarSensor rdf:type owl:Class ;
+                        rdfs:subClassOf doorsystems:Sensor .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Reader
+doorsystems:Reader rdf:type owl:Class ;
+                   rdfs:subClassOf doorsystems:BuildingComponent .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Reedcontakt
+doorsystems:Reedcontakt rdf:type owl:Class ;
+                        rdfs:subClassOf doorsystems:Electric .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#RevolvingDoor
+doorsystems:RevolvingDoor rdf:type owl:Class ;
+                          rdfs:subClassOf doorsystems:Door .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#Sensor
+doorsystems:Sensor rdf:type owl:Class ;
+                   rdfs:subClassOf doorsystems:BuildingComponent .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#SinglePointLock
+doorsystems:SinglePointLock rdf:type owl:Class ;
+                            rdfs:subClassOf doorsystems:Lock .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#SlidingDoor
+doorsystems:SlidingDoor rdf:type owl:Class ;
+                        rdfs:subClassOf doorsystems:Door .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#SlidingDoorOperator
+doorsystems:SlidingDoorOperator rdf:type owl:Class ;
+                                rdfs:subClassOf doorsystems:AutomaticDrive .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#SmokeDetector
+doorsystems:SmokeDetector rdf:type owl:Class ;
+                          rdfs:subClassOf doorsystems:Sensor .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#SwingDoor
+doorsystems:SwingDoor rdf:type owl:Class ;
+                      rdfs:subClassOf doorsystems:Door .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#SwingDoorOperator
+doorsystems:SwingDoorOperator rdf:type owl:Class ;
+                              rdfs:subClassOf doorsystems:AutomaticDrive .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#UltrasonicSensor
+doorsystems:UltrasonicSensor rdf:type owl:Class ;
+                             rdfs:subClassOf doorsystems:Sensor .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#ED100
+doorsystems:ED100 rdf:type owl:NamedIndividual ,
+                           doorsystems:SwingDoorOperator .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#ED250
+doorsystems:ED250 rdf:type owl:NamedIndividual ,
+                           doorsystems:SwingDoorOperator .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#TS98
+doorsystems:TS98 rdf:type owl:NamedIndividual ,
+                          doorsystems:ConsealedDoorCloser .
+
+
+###  http://www.semanticweb.org/oberstka/ontologies/2023/3/doorsystems#TestDoor1
+doorsystems:TestDoor1 rdf:type owl:NamedIndividual ,
+                               doorsystems:SwingDoor ;
+                      doorsystems:hasComponent doorsystems:ED100 ;
+                      doorsystems:hasFireRating "true"^^xsd:boolean .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
